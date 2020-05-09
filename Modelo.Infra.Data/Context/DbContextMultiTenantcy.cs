@@ -25,12 +25,8 @@ namespace Modelo.Infra.Data.Context
 
         public string ConfigureConnectionString() 
         {
-            string source = "(localdb)" + "\"" + "mssqllocaldb";
-            string catalog = "Controle_Modelo";
-            string user = null;
-            string password = null;
-
-            return $"Data Source={source}; Initial Catalog={catalog};user id={user};password={password};Connect Timeout=15;Encrypt=False;TrustServerCertificate=False;MultipleActiveResultSets=True";
+            var result = @"Data Source=(localdb)\mssqllocaldb; Initial Catalog = Controle_Modelo; Integrated Security = True";
+            return result;
         }
     }
 }
