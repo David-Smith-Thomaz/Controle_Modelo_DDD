@@ -11,20 +11,21 @@ using Modelo.Service.Validators;
 namespace Modelo.Application.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Usuario")]
+    [Route("api/User")]
     public class UserController : Controller
     {
         private BaseService<User> service = new BaseService<User>();
 
+        [HttpPost]
         public IActionResult Post([FromBody] User item)
         {
             try
             {
                 service.Post<UserValidator>(item);
 
-                return new ObjectResult(item.Id);
+                return new ObjectResult(item.UserId);
             }
-            catch(ArgumentNullException ex)
+            catch (ArgumentNullException ex)
             {
                 return NotFound(ex);
             }
@@ -34,6 +35,7 @@ namespace Modelo.Application.Controllers
             }
         }
 
+        [HttpPut]
         public IActionResult Put([FromBody] User item)
         {
             try
@@ -42,7 +44,7 @@ namespace Modelo.Application.Controllers
 
                 return new ObjectResult(item);
             }
-            catch(ArgumentNullException ex)
+            catch (ArgumentNullException ex)
             {
                 return NotFound(ex);
             }
@@ -52,6 +54,7 @@ namespace Modelo.Application.Controllers
             }
         }
 
+        [HttpDelete]
         public IActionResult Delete(int id)
         {
             try
@@ -60,7 +63,7 @@ namespace Modelo.Application.Controllers
 
                 return new NoContentResult();
             }
-            catch(ArgumentException ex)
+            catch (ArgumentException ex)
             {
                 return NotFound(ex);
             }
@@ -70,6 +73,7 @@ namespace Modelo.Application.Controllers
             }
         }
 
+        [HttpGet]
         public IActionResult Get()
         {
             try
@@ -82,13 +86,14 @@ namespace Modelo.Application.Controllers
             }
         }
 
+        [HttpGet]
         public IActionResult Get(int id)
         {
             try
             {
                 return new ObjectResult(service.Get(id));
             }
-            catch(ArgumentException ex)
+            catch (ArgumentException ex)
             {
                 return NotFound(ex);
             }

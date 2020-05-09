@@ -5,15 +5,20 @@ using System.Text;
 
 namespace Modelo.Infra.Data.Context
 {
-    public class DbContextMultiTenantcy
+    public class DbContextMultiTenantcy : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connectionString = ConfigureConnectionString();
 
-            if (connectionString != null || connectionString != "") 
+            if (connectionString != null || connectionString != "")
             {
                 optionsBuilder.UseSqlServer(connectionString);
+                base.OnConfiguring(optionsBuilder);
+            }
+            else
+            {
+                base.OnConfiguring(optionsBuilder);
             }
         }
 

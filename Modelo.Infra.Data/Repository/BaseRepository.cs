@@ -10,7 +10,7 @@ namespace Modelo.Infra.Data.Repository
 {
     public class BaseRepository<T> : IRepository<T> where T : UserBase
     {
-        private MySqlContext context = new MySqlContext();
+        private DbContextModelo context = new DbContextModelo();
 
         public void Insert(T obj)
         {
