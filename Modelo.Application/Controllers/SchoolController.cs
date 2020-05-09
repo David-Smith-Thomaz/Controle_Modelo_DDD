@@ -11,19 +11,19 @@ using Modelo.Service.Validators;
 namespace Modelo.Application.Controllers
 {
     [Produces("application/json")]
-    [Route("api/User")]
-    public class UserController : Controller
+    [Route("api/School")]
+    public class SchoolController : Controller
     {
-        private UserServiceBase<User> service = new UserServiceBase<User>();
+        private SchoolServiceBase<School> service = new SchoolServiceBase<School>();
 
         [HttpPost]
-        public IActionResult Post([FromBody] User item)
+        public IActionResult Post([FromBody] School item)
         {
             try
             {
-                service.Post<UserValidator>(item);
+                service.Post<SchoolValidator>(item);
 
-                return new ObjectResult(item.UserId);
+                return new ObjectResult(item.SchoolId);
             }
             catch (ArgumentNullException ex)
             {
@@ -36,11 +36,11 @@ namespace Modelo.Application.Controllers
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody] User item)
+        public IActionResult Put([FromBody] School item)
         {
             try
             {
-                service.Put<UserValidator>(item);
+                service.Put<SchoolValidator>(item);
 
                 return new ObjectResult(item);
             }

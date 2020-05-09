@@ -8,9 +8,9 @@ using System.Text;
 
 namespace Modelo.Service.Services
 {
-    public class BaseService<T> : IService<T> where T : UserBase
+    public class ClassSchoolBaseService<T> : IClassSchoolService<T> where T : ClassSchoolBase
     {
-        private BaseRepository<T> repository = new BaseRepository<T>();
+        private ClassSchoolBaseRepository<T> repository = new ClassSchoolBaseRepository<T>();
 
         public T Post<V>(T obj) where V : AbstractValidator<T>
         {

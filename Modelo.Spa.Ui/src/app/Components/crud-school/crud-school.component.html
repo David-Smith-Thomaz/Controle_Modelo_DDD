@@ -275,31 +275,6 @@
       font-weight: normal;
     }
   </style>
-  <script type="text/javascript">
-$(document).ready(function(){
-	// Activate tooltip
-	$('[data-toggle="tooltip"]').tooltip();
-
-	// Select/Deselect checkboxes
-	var checkbox = $('table tbody input[type="checkbox"]');
-	$("#selectAll").click(function(){
-		if(this.checked){
-			checkbox.each(function(){
-				this.checked = true;
-			});
-		} else{
-			checkbox.each(function(){
-				this.checked = false;
-			});
-		}
-	});
-	checkbox.click(function(){
-		if(!this.checked){
-			$("#selectAll").prop("checked", false);
-		}
-	});
-});
-  </script>
 </head>
 <body>
   <div class="container">
@@ -307,10 +282,10 @@ $(document).ready(function(){
       <div class="table-title">
         <div class="row">
           <div class="col-sm-6">
-            <h2>Manage <b>Employees</b></h2>
+            <h2>Controle <b>Escolas</b></h2>
           </div>
           <div class="col-sm-6">
-            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Adicionar nova Escola</span></a>
+            <button class="btn btn-success" (click)="ShowModalCreate()"><i class="material-icons">&#xE147;</i> <span>Adicionar nova Escola</span></button>
           </div>
         </div>
       </div>
@@ -413,22 +388,10 @@ $(document).ready(function(){
           </tr>
         </tbody>
       </table>
-      <div class="clearfix">
-        <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-        <ul class="pagination">
-          <li class="page-item disabled"><a href="#">Previous</a></li>
-          <li class="page-item"><a href="#" class="page-link">1</a></li>
-          <li class="page-item"><a href="#" class="page-link">2</a></li>
-          <li class="page-item active"><a href="#" class="page-link">3</a></li>
-          <li class="page-item"><a href="#" class="page-link">4</a></li>
-          <li class="page-item"><a href="#" class="page-link">5</a></li>
-          <li class="page-item"><a href="#" class="page-link">Next</a></li>
-        </ul>
-      </div>
     </div>
   </div>
   <!-- Edit Modal HTML -->
-  <div id="addEmployeeModal" class="modal fade">
+  <div *ngIf="showModalCreate == true" id="addEmployeeModal" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
         <form>
@@ -463,7 +426,7 @@ $(document).ready(function(){
     </div>
   </div>
   <!-- Edit Modal HTML -->
-  <div id="editEmployeeModal" class="modal fade">
+  <div id="editmodal" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
         <form>

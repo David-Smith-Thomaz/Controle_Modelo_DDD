@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Modelo.Domain.Entities
 {
-    public class User : UserBase
+    public class ClassSchool : ClassSchoolBase
     {
 
     }

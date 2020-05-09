@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Modelo.Infra.Data.Repository
 {
-    public class BaseRepository<T> : IRepository<T> where T : UserBase
+    public class SchoolBaseRepository<T> : ISchoolRepository<T> where T : SchoolBase
     {
         private DbContextModelo context = new DbContextModelo();
 

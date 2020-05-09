@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare var $: any;
+
 @Component({
   selector: 'app-crud-school',
   templateUrl: './crud-school.component.html',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrudSchoolComponent implements OnInit {
 
-  constructor() { }
+  listSchools: any[];
+  showModalCreate = false;
 
-  ngOnInit(): void {
+  constructor()
+  {
+
+  }
+
+  ngOnInit()
+  {
+
+  }
+
+  ShowModalCreate()
+  {
+    $("#addEmployeeModal").removeClass('Hide')
+    this.showModalCreate = true;
   }
 
 }
