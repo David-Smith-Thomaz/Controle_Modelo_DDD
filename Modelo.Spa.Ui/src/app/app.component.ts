@@ -6,5 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'Modelo';
+  showListSchool = false;  
+
+  constructor() { }
+
+  ngOnInit(): void {
+
+  }
+
+  onClickButtonShowListSchool()
+  {
+    this.showListSchool = true;
+  }
+
+  onClickButtonHideListSchool()
+  {
+  this.showListSchool = false;
+  }
 }
