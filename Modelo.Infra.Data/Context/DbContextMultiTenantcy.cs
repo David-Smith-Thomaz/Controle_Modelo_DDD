@@ -25,7 +25,7 @@ namespace Modelo.Infra.Data.Context
 
         public string ConfigureConnectionString() 
         {
-            string source = "(localdb)" + "'\'" + "mssqllocaldb";
+            string source = "(localdb)" + "\"" + "mssqllocaldb";
             string catalog = "Controle_Modelo";
             string user = null;
             string password = null;

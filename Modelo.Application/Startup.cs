@@ -27,7 +27,7 @@ namespace Modelo.Application
         {
             services.AddMvc();
 
-            //services.AddDbContext<DbContextModelo>(options => options.UseSqlServer(Db.ConfigureConnectionString()));
+        //services.AddDbContext<DbContextModelo>(options => options.UseSqlServer(Db.ConfigureConnectionString()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
