@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Modelo.Domain.Interfaces
 {
-    public interface IRepository<T> where T : BaseEntity
+    public interface IRepository<T> where T : UserBase
     {
         void Insert(T obj);
 

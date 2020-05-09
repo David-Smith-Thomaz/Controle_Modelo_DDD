@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Modelo.Service.Services
 {
-    public class BaseService<T> : IService<T> where T : BaseEntity
+    public class BaseService<T> : IService<T> where T : UserBase
     {
         private BaseRepository<T> repository = new BaseRepository<T>();
 

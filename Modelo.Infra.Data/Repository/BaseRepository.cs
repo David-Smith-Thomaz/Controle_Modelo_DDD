@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Modelo.Infra.Data.Repository
 {
-    public class BaseRepository<T> : IRepository<T> where T : BaseEntity
+    public class BaseRepository<T> : IRepository<T> where T : UserBase
     {
         private MySqlContext context = new MySqlContext();
 

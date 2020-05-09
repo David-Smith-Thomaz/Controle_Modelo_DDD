@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Modelo.Domain.Interfaces
 {
-    public interface IService<T> where T : BaseEntity
+    public interface IService<T> where T : UserBase
     {
         T Post<V>(T obj) where V : AbstractValidator<T>;
 
