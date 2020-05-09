@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalDirective } from 'ngx-bootstrap/modal';
 
 declare var $: any;
 
@@ -12,6 +13,10 @@ export class CrudSchoolComponent implements OnInit {
   listSchools: any[];
   showModalCreate = false;
 
+  @ViewChild('createModal') private createModal: ModalDirective
+  @ViewChild('deleteModal') private deleteModal: ModalDirective
+  @ViewChild('editModal') private editModal: ModalDirective
+
   constructor()
   {
 
@@ -24,8 +29,10 @@ export class CrudSchoolComponent implements OnInit {
 
   ShowModalCreate()
   {
-    $("#addEmployeeModal").removeClass('Hide')
     this.showModalCreate = true;
+    setTimeout(() => {
+      this.createModal.show();
+    }, 500)
   }
 
 }

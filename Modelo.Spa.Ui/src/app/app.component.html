@@ -1,6 +1,6 @@
 
 <div class="toolbar" role="banner">
-  <p class=" ml-5">Modelo Controle</p>
+  <p>Modelo Controle</p>
   <div class="spacer"></div>
 </div>
 
@@ -21,9 +21,10 @@
   </div>
 
   <div *ngIf="showListSchool == true">
-    <app-crud-school></app-crud-school>
+    <div class="col-md-12">
+      <app-crud-school></app-crud-school>
+    </div>
   </div>
-
 
   <footer>
   </footer>
