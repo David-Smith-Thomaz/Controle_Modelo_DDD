@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalDirective } from 'ngx-bootstrap/modal';
+import { CrudSchoolService } from './crud-school.service';
 
 declare var $: any;
 
@@ -10,29 +11,28 @@ declare var $: any;
 })
 export class CrudSchoolComponent implements OnInit {
 
-  listSchools: any[];
+  list: any[];
   showModalCreate = false;
 
   @ViewChild('createModal') private createModal: ModalDirective
   @ViewChild('deleteModal') private deleteModal: ModalDirective
   @ViewChild('editModal') private editModal: ModalDirective
 
-  constructor()
+  constructor(private crudSchoolService: CrudSchoolService)
   {
 
   }
 
   ngOnInit()
   {
-
+    this.listSchools();
   }
 
-  ShowModalCreate()
+  listSchools()
   {
-    this.showModalCreate = true;
-    setTimeout(() => {
-      this.createModal.show();
-    }, 500)
+    this.crudSchoolService.listSchools().subscribe(result => {
+      this.list = result;
+      console.log("this.list", this.list)
+    });
   }
-
 }

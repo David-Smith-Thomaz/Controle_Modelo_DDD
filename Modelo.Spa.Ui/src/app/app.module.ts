@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CrudSchoolComponent } from './Components/crud-school/crud-school.component';
+import { CrudSchoolService } from './Components/crud-school/crud-school.service';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -12,9 +14,10 @@ import { CrudSchoolComponent } from './Components/crud-school/crud-school.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CrudSchoolService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

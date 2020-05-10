@@ -86,7 +86,7 @@ namespace Modelo.Application.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             try
